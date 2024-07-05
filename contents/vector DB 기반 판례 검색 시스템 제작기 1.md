@@ -191,6 +191,6 @@ beir 데이터도 함께
    - 쿼리에 특징에 따라 다른 파이프라인
    - 키워드 검색
 4. 데이터
-    - 
+    - https://www.data.go.kr/tcs/eds/selectCoreDataView.do?coreDataInsttCode=1051000&coreDataSn=1
 
 질문 간의 유사도를 비교해서 그와 관련된 문서를 찾아주는 방법

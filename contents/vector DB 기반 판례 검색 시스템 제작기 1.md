@@ -184,7 +184,7 @@ beir 데이터도 함께
 2. loss
    - neg 제약
    - 기존 임베딩에서 크게 안 바뀌도록
-   - 강화학습
+   - pos 순위 매겨서 유사도가 앞순위 넘으면 페널티
 3. 검색 방법
    - rexical, coberta
    - 한 쿼리를 여러개로 나눠서 검색
@@ -192,5 +192,7 @@ beir 데이터도 함께
    - 키워드 검색
 4. 데이터
     - https://www.data.go.kr/tcs/eds/selectCoreDataView.do?coreDataInsttCode=1051000&coreDataSn=1
+    - 언어를 다양한 언어로 변역 후 다시 번역
+5. 프롬프트
 
 질문 간의 유사도를 비교해서 그와 관련된 문서를 찾아주는 방법

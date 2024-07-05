@@ -44,35 +44,6 @@ KS-Lottery는 LLaMA-7B 모델에서 영어에서 카탈루냐어로 번역하는
 
 식별된 핵심 매개변수(토큰 임베딩)만 미세 조정하고 나머지 매개변수는 고정하여, 전체 모델을 미세 조정하는 것과 유사한 성능을 달성합니다.
 
-- lottery ticket hypothesis for multilingual fine-tuning
-
-    - 미세 조정 과정은 M개 매개변수의 변화로 표현될 수 있습니다 ($θ$에서 $ \tilde{θ}$로).
-    - 일반적인 미세 조정에서는 전체 매개변수 집합 $θ$를 조정하여 새로운 작업에 대한 모델의 능력을 향상시킵니다.
-    - 본 논문에서는 전체 매개변수 집합 $θ$ 중 극히 일부만 변경해도 전체 모델을 미세 조정한 것과 동일한 성능을 얻을 수 있다는 가설을 제시합니다.
-
-### KS-Lottery 방법
-
-본 논문에서는 LLM의 임베딩 레이어만 미세 조정하여 "winning tickets"을 식별하는 KS-Lottery 방법을 제안합니다.
-
-<br>
-
-KS-Lottery는 다음 세 단계로 구성됩니다.
-
-1. LLM의 임베딩 레이어를 미세 조정합니다.
-2. Kolmogorov-Smirnov Test을 사용하여 미세 조정 전후의 매개변수 분포 변화를 분석하고, "winning tickets"을 선택합니다.
-3. 선택된 "winning tickets"만 미세 조정하고 나머지 매개변수는 고정합니다.
-
-### KS-Lottery의 핵심 아이디어
-
-- 미세 조정 전후에 분포 변화가 큰 매개변수를 "winning tickets"으로 간주합니다.
-- Kolmogorov-Smirnov Test은 두 표본 변수가 동일한 분포에서 유래했는지 판별하는 데 사용되며, 분포를 가정하지 않아도 되므로 유용합니다.
-- 임베딩 레이어는 다국어 작업의 귀납적 편향으로 인해 매개변수 변화가 가장 큰 부분이므로, 분석 과정을 단순화하고 가속화하기 위해 임베딩 레이어에 집중합니다.
-
-### 이론적 검증
-
-- randomized smoothing 기법에서 영감을 얻어, 미세 조정 전후에 Kolmogorov-Smirnov 거리가 작은 매개변수는 예측에 영향을 미치지 않음을 보여줍니다.
-- 이를 통해 "winning tickets"에 대한 부분 조정 성능의 하한을 보장할 수 있습니다.
-- 또한, 원래 예측 모델의 불확실성이 낮을 때 KS-Lottery가 작은 "winning tickets" 집합을 찾을 수 있음을 증명합니다.
 
 <div id="Modular Deep Learning"></div>
 

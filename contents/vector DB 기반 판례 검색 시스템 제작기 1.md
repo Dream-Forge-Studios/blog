@@ -180,6 +180,8 @@ beir 데이터도 함께
 
 ### 신경써야할 부분
 
+https://arxiv.org/pdf/2404.14723
+
 1. 모델
 2. loss
    - neg 제약
